@@ -1,0 +1,13 @@
+BEGIN 
+	FOR ii TO 100 DO
+		IF (ii %* 15 = 0) THEN
+			printf(($gl$,"FizzBuzz!"))
+		ELIF (ii %* 3 = 0) THEN
+			printf(($gl$,"Fizz!"))
+		ELIF (ii %* 5 = 0) THEN
+			printf(($gl$,"Buzz!"))
+		ELSE 
+			printf(($gl$,ii))
+		FI
+	OD
+END
