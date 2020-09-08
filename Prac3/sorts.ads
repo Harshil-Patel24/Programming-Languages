@@ -3,6 +3,5 @@ package Sorts is
 
 	procedure bubblesort(A: in out Integer_Array);
 	procedure PrintArray(ArrayToPrint: in Integer_Array);
-	procedure Test;
 
 end Sorts;

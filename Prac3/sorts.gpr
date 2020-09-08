@@ -1,0 +1,3 @@
+project Sorts is
+	for Main use ("test.adb");
+end Sorts;

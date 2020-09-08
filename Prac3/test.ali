@@ -1,0 +1,24 @@
+V "GNAT Lib v8"
+M P W=b
+P ZX
+
+RN
+RV SPARK_05
+
+U test%b		test.adb		02c1d27a NE OO SU
+W sorts%s		sorts.adb		sorts.ali
+
+D sorts.ads		20200908132010 a14f401e sorts%s
+D system.ads		20200304083000 4635ec04 system%s
+D test.adb		20200908131848 a38e9264 test%b
+X 1 sorts.ads
+1K9*Sorts 7e10 3|1w6 1r17
+2A14*Integer_Array(integer)<integer> 3|4r16 5r16 6r16
+4U19*bubblesort 3|9s9 12s9 15s9
+5U19*PrintArray 3|10s9 13s9 16s9
+X 3 test.adb
+3U11*Test 3b11 18l5 18t9
+4a9 arrR{1|2A14} 9m21 9r21 10r21
+5a9 arrA{1|2A14} 12m21 12r21 13r21
+6a9 arrD{1|2A14} 15m21 15r21 16r21
+

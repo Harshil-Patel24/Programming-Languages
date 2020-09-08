@@ -12,8 +12,8 @@ package body Sorts is
 
 		loop
 			swapped := false;
-			for I in A'Range loop
 
+			for I in (A'First + 1) .. (A'Last) loop
 				if A(I - 1) > A(I) then
 					temp := A(I - 1);
 					A(I - 1) := A(I);
@@ -36,24 +36,5 @@ package body Sorts is
 			New_Line(1);
 		end loop;
 	end PrintArray;
-
-
-	procedure Test is
-		arrR : Integer_Array := (5,3,7,12,2,6,3,5,7,10);
-		arrA : Integer_Array := (1,2,3,4,5,6,7,8,9,10);
-		arrD : Integer_Array := (10,9,8,7,6,5,4,3,2,1);
-	begin
-
-		BubbleSort( arrR );
-		PrintArray( arrR );
-
-		BubbleSort( arrA );
-		PrintArray( arrA );
-	
-		BubbleSort( arrD );
-		PrintArray( arrD );
-
-	end Test;
-		
 
 end Sorts;
