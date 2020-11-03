@@ -8,9 +8,9 @@ RV SPARK_05
 U test%b		test.adb		02c1d27a NE OO SU
 W sorts%s		sorts.adb		sorts.ali
 
-D sorts.ads		20200908132010 a14f401e sorts%s
+D sorts.ads		20201102142305 a14f401e sorts%s
 D system.ads		20200304083000 4635ec04 system%s
-D test.adb		20200908131848 a38e9264 test%b
+D test.adb		20200908133843 a38e9264 test%b
 X 1 sorts.ads
 1K9*Sorts 7e10 3|1w6 1r17
 2A14*Integer_Array(integer)<integer> 3|4r16 5r16 6r16

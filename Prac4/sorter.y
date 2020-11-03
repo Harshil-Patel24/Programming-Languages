@@ -4,19 +4,18 @@
 void sort(int*);
 %}
 
-
+/*
 %union
 {
 	int *array;
 	int arrayLen;
 }
-
+*/
 %token <array> ARRAY
 %token <arrayLen> LENGTH
 
 %%
-rule:
-	rule
+list:
 %%
 
 void yyerror(const char *str)

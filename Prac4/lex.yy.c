@@ -727,9 +727,12 @@ case 1:
 YY_RULE_SETUP
 #line 9 "sorter.l"
 {
-				printf("WORKS %s\n", yytext);
 				/*yylval = atoi(yytext);
 				printf("%i", yylval);*/
+				char text[sizeof(yytext) - 1 - 2];
+				text = (yytext.shift()).pop();
+				printf("WORKS %s\n", yytext);
+				printf("%s\n", text);
 				yylval.array = yytext;
 				yylval.arrayLen = (sizeof(yytext) - 1)/2;
 				return ARRAY;
@@ -738,10 +741,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 "sorter.l"
+#line 21 "sorter.l"
 ECHO;
 	YY_BREAK
-#line 745 "lex.yy.c"
+#line 748 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1746,7 +1749,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 18 "sorter.l"
+#line 21 "sorter.l"
 
 int yywrap(void)
 {

@@ -24,7 +24,7 @@ D a-tiinio.ads		20200304083000 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20200304083000 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20200304083000 5ab55268 interfaces%s
 D i-cstrea.ads		20200304083000 e53d8b8e interfaces.c_streams%s
-D sorts.ads		20200908132010 a14f401e sorts%s
+D sorts.ads		20201102142305 a14f401e sorts%s
 D sorts.adb		20200908133800 01e4bb42 sorts%b
 D system.ads		20200304083000 4635ec04 system%s
 D s-crtl.ads		20200304083000 0ebbdb71 system.crtl%s
