@@ -1,12 +1,72 @@
-(define (bubble-down v)
-	
-)
-
-(define (bubble-up v)
-)
-
 (define (cocktail v)
-	(let ((cont #t) (start 0) (end (- vector-length 1)))
-		(set! cont #f)
-			
-		
+	(let ((cont 0) (start 0) (ii 0) (jj (+ (vector-length v) -1)) (end (+ (vector-length v) -1)) (temp 0))
+		(define (bubup)
+			(if (< ii end)
+				(begin
+					(if (> (vector-ref v ii) (vector-ref v (+ ii 1)))
+						(begin
+							(set! temp (vector-ref v ii))
+							(vector-set! v ii (vector-ref v (+ ii 1)))
+							(vector-set! v (+ ii 1) temp)
+							(set! cont 0)
+						)
+					)	
+					(set! ii (+ ii 1))
+					(bubup)
+				)
+			)
+		)
+
+		(define (bubdown)
+			(if (> ii start)
+				(begin
+					(if (< (vector-ref v ii) (vector-ref v (+ ii -1)))
+						(begin
+							(set! temp (vector-ref v ii))
+							(vector-set! v ii (vector-ref v (+ ii -1)))
+							(vector-set! v (+ ii -1) temp)
+							(set! cont 0)
+						)
+					)
+					(set! ii (+ ii -1))
+					(bubdown)
+				)
+			)
+		)
+
+		(define (while)
+			(display cont)
+			(if (= cont 0)
+				(begin
+					(set! cont 1)
+					(bubup)
+					(bubdown)
+					(while)
+				)
+			)
+		)
+		(while)
+	)
+)
+
+(define zz 0)
+(define (print v)
+	(define (loop) 
+		(if (< zz (vector-length v))
+			(begin 
+				(display (vector-ref v zz))
+				(display " ")
+				(set! zz (+ zz 1))
+				(loop)
+			)
+		)
+	)
+	(loop)
+)
+
+(define vec #(4 67 2 47 9 4 2 8 4 9))
+(cocktail vec)
+(print vec)
+
+
+	
