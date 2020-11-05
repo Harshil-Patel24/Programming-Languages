@@ -402,28 +402,28 @@ static const YY_CHAR yy_meta[6] =
         1,    1,    2,    1,    1
     } ;
 
-static const flex_int16_t yy_base[13] =
+static const flex_int16_t yy_base[14] =
     {   0,
-        7,    6,    9,   12,    0,    0,    0,   12,    5,   12,
-        5,    2
+        8,    7,   10,   13,    0,    0,    0,   13,    6,   13,
+        5,    6,    2
     } ;
 
-static const flex_int16_t yy_def[13] =
+static const flex_int16_t yy_def[14] =
     {   0,
-       11,   11,   10,   10,   10,   12,    5,   10,    5,    0,
-       10,   10
+       11,   11,   10,   10,   12,   10,   13,   10,    6,    0,
+       10,   10,   10
     } ;
 
-static const flex_int16_t yy_nxt[18] =
+static const flex_int16_t yy_nxt[19] =
     {   0,
-       10,    6,    7,    9,    8,    4,    4,    9,   10,    5,
-        5,    3,   10,   10,   10,   10,   10
+       10,    7,    6,    9,    8,    4,    4,    6,    9,   10,
+        5,    5,    3,   10,   10,   10,   10,   10
     } ;
 
-static const flex_int16_t yy_chk[18] =
+static const flex_int16_t yy_chk[19] =
     {   0,
-        0,    5,    5,   12,    5,   11,   11,    9,    3,    2,
-        1,   10,   10,   10,   10,   10,   10
+        0,    6,    6,   13,    6,   11,   11,   12,    9,    3,
+        2,    1,   10,   10,   10,   10,   10,   10
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -699,7 +699,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 12 );
+		while ( yy_base[yy_current_state] != 13 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -729,22 +729,19 @@ YY_RULE_SETUP
 {
 				/*yylval = atoi(yytext);
 				printf("%i", yylval);*/
-				char text[sizeof(yytext) - 1 - 2];
-				text = (yytext.shift()).pop();
-				printf("WORKS %s\n", yytext);
-				printf("%s\n", text);
+				//printf("WORKS %s\n", yytext);
 				yylval.array = yytext;
-				yylval.arrayLen = (sizeof(yytext) - 1)/2;
+				//yylval.arrayLen = (sizeof(yytext)/sizeof(yytext[0]));
 				return ARRAY;
 
 			}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 21 "sorter.l"
+#line 18 "sorter.l"
 ECHO;
 	YY_BREAK
-#line 748 "lex.yy.c"
+#line 745 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1749,12 +1746,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 21 "sorter.l"
-
-int yywrap(void)
-{
-	return 1;
-}
+#line 18 "sorter.l"
 
 
 

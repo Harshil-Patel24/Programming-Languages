@@ -1,21 +1,28 @@
 %{
 #include <stdio.h>
 #include <string.h>
-void sort(int*);
+void sort(int*, int);
+int* split(char*, int*);
+void print(int*, int);
 %}
 
-/*
 %union
 {
-	int *array;
-	int arrayLen;
+	char* array;
 }
-*/
+
 %token <array> ARRAY
-%token <arrayLen> LENGTH
 
 %%
-list:
+expression: 
+	ARRAY	{
+			int len;
+			int* sorted = split($<array>1, &len);
+			sort(sorted, len);
+			print(sorted, len);
+		}
+
+		
 %%
 
 void yyerror(const char *str)
@@ -28,12 +35,33 @@ int yywrap()
 	return 1;
 }
 
-void sort(int* array)
+int* split(char* arr, int* out)
 {
-	int size = sizeof(array);
-	for( int ii = 0; ii < size - 1; ii++)
+	int ii;
+	char* tok;
+	int* nums = (int*)malloc((sizeof(arr)*sizeof(int))/sizeof(char));
+	ii = 0;
+	arr++;
+	arr[strlen(arr)-1] = '\0';
+
+	tok = strtok(arr, ",");	
+
+	while(tok != NULL)
 	{
-		for(int jj = 0; jj < size - ii - 1; jj++)
+		nums[ii] = atoi(tok);
+		tok = strtok(NULL, ",");
+		ii++;	
+	}
+	*out = ii;
+	return nums;
+}
+
+void sort(int* array, int size)
+{
+	int ii,jj;
+	for(ii = 0; ii < size - 1; ii++)
+	{
+		for(jj = 0; jj < size - ii - 1; jj++)
 		{
 			if( array[jj] > array[jj + 1])
 			{
@@ -43,6 +71,16 @@ void sort(int* array)
 			}
 		}
 	}
+}
+
+void print(int* array, int len)
+{
+	printf("\n[");
+	for(int ii = 0; ii < len; ii++)
+	{
+		printf("%d ",array[ii]);
+	}
+	printf("]\n");
 }
 
 main()
