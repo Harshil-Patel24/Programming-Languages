@@ -35,7 +35,6 @@
 		)
 
 		(define (while)
-			(display cont)
 			(if (= cont 0)
 				(begin
 					(set! cont 1)
@@ -51,7 +50,8 @@
 
 (define zz 0)
 (define (print v)
-	(define (loop) 
+	(display "\n")
+	(define (loop)
 		(if (< zz (vector-length v))
 			(begin 
 				(display (vector-ref v zz))
