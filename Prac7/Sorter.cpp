@@ -63,7 +63,7 @@ int partition(Book books[NUM_BOOKS], int left, int right)
 		if(books[jj].getBookID() < pivot)
 		{
 			ii++;
-//cout<<"Partitioning: "<<ii;
+
 			swap(&books[ii], &books[jj]);
 		}
 	}
@@ -85,12 +85,7 @@ void qSort(Book books[NUM_BOOKS], int left, int right)
 
 void sort(Book* books)
 {
-/*
-cout<<"Size of Books: "<<to_string(sizeof(books))<<"\n";
-cout<<"Book 1 ID is: "<<to_string(books[0].getBookID())<<"\n";
-cout<<"Right Index = "<<to_string(sizeof(books[0]))<<"\n";
-cout<<"Book type in sort: "<<typeid(books).name()<<"\n";
-*/
+
 	qSort(books, 0, NUM_BOOKS - 1);	
 }
 
@@ -99,30 +94,16 @@ int main()
 	Book books[NUM_BOOKS];
 	srand((unsigned) time(0));
 
-/*cout<<"Size of books: "<<to_string(sizeof(books)/sizeof(books[0]))<<"\n";*/
 	for(int ii = 0; ii < NUM_BOOKS; ii++)
 	{
-/*cout<<to_string(ii)<<"\n";*/
+
 		int randInt = rand() % 500;
 		books[ii] = Book(randInt, to_string(ii), to_string(ii)); 
 	}
 
 	displayAll(books);
 	
-//	sort(books);
 
-/*
-	for(int ii = 0; ii < sizeof(books)/sizeof(books[0]); ii++)
-	{
-		books[ii].display();
-	}
-*/
-
-/*
-cout<<"Size of books in main: "<<to_string(sizeof(books))<<"\n";
-cout<<"Size of Book datatype: "<<to_string(sizeof(books[0]))<<"\n";
-cout<<"Book type in main "<<typeid(books).name()<<"\n";
-*/
 	sort(books);
 
 
