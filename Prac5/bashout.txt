@@ -1,0 +1,4 @@
+/home/student/.config/Trolltech.conf
+/home/student/.tmux.conf
+/home/student/snap/gnome-system-monitor/148/.config/fontconfig/fonts.conf
+/home/student/snap/gnome-system-monitor/57/.config/fontconfig/fonts.conf

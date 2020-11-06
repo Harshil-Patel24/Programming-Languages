@@ -17,10 +17,3 @@ sub findFiles
 }
 exit;
 
-
-
-
-
-
-
-

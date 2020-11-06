@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scheme -load sorter.scm
+scheme -load sorter.scm >> output.txt &

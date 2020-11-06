@@ -1,4 +1,5 @@
 #!/bin/bash
 
 gplc fizzbuzz.pl
-./fizzbuzz
+./fizzbuzz >> output.txt
+
