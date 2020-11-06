@@ -1,3 +1,4 @@
 #!/bin/bash
 
-a68g fizzbuzz.a68
+a68g fizzbuzz.a68 >> output.txt
+

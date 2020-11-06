@@ -2,4 +2,5 @@
 
 gnatmake sorts.adb
 gnatmake test.adb
-./test
+./test >> output.txt
+

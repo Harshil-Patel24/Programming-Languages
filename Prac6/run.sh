@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gst fizzbuzz.st
+gst fizzbuzz.st >> output.txt
+
